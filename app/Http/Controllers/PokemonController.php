@@ -14,7 +14,7 @@ class PokemonController extends Controller
 
         $response = $client->request("GET", $uri);
 
-        $responseBody = json_decode($response->getBody());
+        $responseBody = json_decode($response->getBody(), true);
 
         return view('pokemon', compact('responseBody'));
     }

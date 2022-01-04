@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    @dd($responseBody)
-    @foreach ($responseBody as $pokemon)
-        @dd($pokemon)
-        {{-- <p>{{ $pokemon[0]->name }}</p> --}}
+    @foreach ($responseBody['results'] as $pokemon)
+        <p>{{ $pokemon['name'] }}</p>
+        <img src="https://pokeres.bastionbot.org/images/pokemon/{{ $pokemon['id'] }}.png" alt="">
     @endforeach
 </body>
 
