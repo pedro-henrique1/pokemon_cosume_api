@@ -1,5 +1,5 @@
 @if ($responseBody == false)
-    <h1 class="text-center text-white">Pokemon não encontrado</h1>
+    <h1 class="text-center h3 text-white">Pokemon não encontrado ou Nome errado!</h1>
 @else
     <div class="" style="width: 18rem; margin: -10% auto; font-family: 'Hind', sans-serif;">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ $responseBody->id }}.png"
