@@ -1,20 +1,23 @@
 @include('__partils.header')
 
-<body style="background-color: #a2d2ff">
-    <div class="container-fluid">
-        <form action="/search" method="get" class="col-6" style="margin: 8% auto;">
-            <div class="input-group">
-                <input type=" text" class="form-control" name="pokemon" placeholder="Nome do pokemon ou id">
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
-        </form>
+<body style="background-color: #7DD3FC">
+    <div class="container-md">
+        <div class="flex justify-center mt-24">
+            <form action="/search" method="get" class="w-96 ">
+                <div class="flex flex-row">
+                    <input type="text"
+                        class="form-control bg-white bg-clip-padding rounded-r-lg
+        border border-solid border-gray-300 mt-5 mb-2 py-1.5  px-3 basis-1/4 justify-between rounde-md rounded-md  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        name="pokemon" placeholder="Nome do pokemon ou id">
+                    <button class="bg-blue-600 text-white font-medium rounded w-20 h-10 basis-1/4 mt-5 mr-2"
+                        type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
         @if (request()->routeIs('pokemon.search*') == true)
             @include('__partils.card')
         @endif
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
