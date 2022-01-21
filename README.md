@@ -1,66 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1 align="center">Consumo de api com laravel</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+[![GitHub license](https://img.shields.io/github/license/pedro-henrique1/pokemon_cosume_api?style=for-the-badge)](https://github.com/pedro-henrique1/pokemon_cosume_api)
+[![GitHub stars](https://img.shields.io/github/stars/pedro-henrique1/pokemon_cosume_api?style=for-the-badge)](https://github.com/pedro-henrique1/pokemon_cosume_api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/pedro-henrique1/pokemon_cosume_api?style=for-the-badge)](https://github.com/pedro-henrique1/pokemon_cosume_api/network)
+![GitHub repo size](https://img.shields.io/github/repo-size/pedro-henrique1/pokemon_cosume_api?style=for-the-badge)
+[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMTQuOTk5OTk5OTk5OTk5OTciIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAyMTQuOTk5OTk5OTk5OTk5OTcgMzUiPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjAiIHk9IjAiIHdpZHRoPSI4NS41MyIgaGVpZ2h0PSIzNSIgZmlsbD0iIzU1NTU1NSIvPjxyZWN0IGNsYXNzPSJzdmdfX3JlY3QiIHg9IjgzLjUzIiB5PSIwIiB3aWR0aD0iMTMxLjQ2OTk5OTk5OTk5OTk3IiBoZWlnaHQ9IjM1IiBmaWxsPSIjNDRDQzExIi8+PHBhdGggY2xhc3M9InN2Z19fdGV4dCIgZD0iTTEzLjc4IDE5LjQyTDEzLjc4IDE5LjQyTDE1LjI3IDE5LjQyUTE1LjI3IDIwLjE1IDE1Ljc1IDIwLjU1UTE2LjIzIDIwLjk1IDE3LjEyIDIwLjk1TDE3LjEyIDIwLjk1UTE3LjkwIDIwLjk1IDE4LjI5IDIwLjYzUTE4LjY4IDIwLjMyIDE4LjY4IDE5LjgwTDE4LjY4IDE5LjgwUTE4LjY4IDE5LjI0IDE4LjI4IDE4Ljk0UTE3Ljg5IDE4LjYzIDE2Ljg1IDE4LjMyUTE1LjgyIDE4LjAxIDE1LjIxIDE3LjYzTDE1LjIxIDE3LjYzUTE0LjA1IDE2LjkwIDE0LjA1IDE1LjcyTDE0LjA1IDE1LjcyUTE0LjA1IDE0LjY5IDE0Ljg5IDE0LjAyUTE1LjczIDEzLjM1IDE3LjA3IDEzLjM1TDE3LjA3IDEzLjM1UTE3Ljk2IDEzLjM1IDE4LjY2IDEzLjY4UTE5LjM2IDE0LjAxIDE5Ljc1IDE0LjYxUTIwLjE1IDE1LjIyIDIwLjE1IDE1Ljk2TDIwLjE1IDE1Ljk2TDE4LjY4IDE1Ljk2UTE4LjY4IDE1LjI5IDE4LjI2IDE0LjkxUTE3Ljg0IDE0LjU0IDE3LjA2IDE0LjU0TDE3LjA2IDE0LjU0UTE2LjMzIDE0LjU0IDE1LjkzIDE0Ljg1UTE1LjUzIDE1LjE2IDE1LjUzIDE1LjcxTDE1LjUzIDE1LjcxUTE1LjUzIDE2LjE4IDE1Ljk2IDE2LjUwUTE2LjQwIDE2LjgxIDE3LjM5IDE3LjEwUTE4LjM5IDE3LjQwIDE4Ljk5IDE3Ljc4UTE5LjYwIDE4LjE2IDE5Ljg4IDE4LjY1UTIwLjE2IDE5LjEzIDIwLjE2IDE5Ljc5TDIwLjE2IDE5Ljc5UTIwLjE2IDIwLjg2IDE5LjM0IDIxLjQ5UTE4LjUyIDIyLjEyIDE3LjEyIDIyLjEyTDE3LjEyIDIyLjEyUTE2LjIwIDIyLjEyIDE1LjQyIDIxLjc3UTE0LjY0IDIxLjQzIDE0LjIxIDIwLjgzUTEzLjc4IDIwLjIyIDEzLjc4IDE5LjQyWk0yNi4xMyAxNC42NkwyMy40OSAxNC42NkwyMy40OSAxMy40N0wzMC4yNiAxMy40N0wzMC4yNiAxNC42NkwyNy42MCAxNC42NkwyNy42MCAyMkwyNi4xMyAyMkwyNi4xMyAxNC42NlpNMzQuODAgMjJMMzMuMjUgMjJMMzYuNDggMTMuNDdMMzcuODEgMTMuNDdMNDEuMDQgMjJMMzkuNDkgMjJMMzguNzkgMjAuMDFMMzUuNDkgMjAuMDFMMzQuODAgMjJaTTM3LjE0IDE1LjI4TDM1LjkwIDE4LjgyTDM4LjM4IDE4LjgyTDM3LjE0IDE1LjI4Wk00Ni42NyAxNC42Nkw0NC4wNCAxNC42Nkw0NC4wNCAxMy40N0w1MC44MCAxMy40N0w1MC44MCAxNC42Nkw0OC4xNCAxNC42Nkw0OC4xNCAyMkw0Ni42NyAyMkw0Ni42NyAxNC42NlpNNTQuNDIgMTkuMTZMNTQuNDIgMTkuMTZMNTQuNDIgMTMuNDdMNTUuOTAgMTMuNDdMNTUuOTAgMTkuMThRNTUuOTAgMjAuMDMgNTYuMzMgMjAuNDhRNTYuNzcgMjAuOTMgNTcuNjEgMjAuOTNMNTcuNjEgMjAuOTNRNTkuMzIgMjAuOTMgNTkuMzIgMTkuMTNMNTkuMzIgMTkuMTNMNTkuMzIgMTMuNDdMNjAuODAgMTMuNDdMNjAuODAgMTkuMTdRNjAuODAgMjAuNTMgNTkuOTMgMjEuMzJRNTkuMDYgMjIuMTIgNTcuNjEgMjIuMTJMNTcuNjEgMjIuMTJRNTYuMTUgMjIuMTIgNTUuMjkgMjEuMzNRNTQuNDIgMjAuNTUgNTQuNDIgMTkuMTZaTTY0Ljk0IDE5LjQyTDY0Ljk0IDE5LjQyTDY2LjQyIDE5LjQyUTY2LjQyIDIwLjE1IDY2LjkwIDIwLjU1UTY3LjM4IDIwLjk1IDY4LjI4IDIwLjk1TDY4LjI4IDIwLjk1UTY5LjA1IDIwLjk1IDY5LjQ0IDIwLjYzUTY5LjgzIDIwLjMyIDY5LjgzIDE5LjgwTDY5LjgzIDE5LjgwUTY5LjgzIDE5LjI0IDY5LjQzIDE4Ljk0UTY5LjA0IDE4LjYzIDY4LjAxIDE4LjMyUTY2Ljk3IDE4LjAxIDY2LjM3IDE3LjYzTDY2LjM3IDE3LjYzUTY1LjIwIDE2LjkwIDY1LjIwIDE1LjcyTDY1LjIwIDE1LjcyUTY1LjIwIDE0LjY5IDY2LjA0IDE0LjAyUTY2Ljg4IDEzLjM1IDY4LjIyIDEzLjM1TDY4LjIyIDEzLjM1UTY5LjExIDEzLjM1IDY5LjgxIDEzLjY4UTcwLjUxIDE0LjAxIDcwLjkxIDE0LjYxUTcxLjMxIDE1LjIyIDcxLjMxIDE1Ljk2TDcxLjMxIDE1Ljk2TDY5LjgzIDE1Ljk2UTY5LjgzIDE1LjI5IDY5LjQxIDE0LjkxUTY4Ljk5IDE0LjU0IDY4LjIxIDE0LjU0TDY4LjIxIDE0LjU0UTY3LjQ4IDE0LjU0IDY3LjA4IDE0Ljg1UTY2LjY4IDE1LjE2IDY2LjY4IDE1LjcxTDY2LjY4IDE1LjcxUTY2LjY4IDE2LjE4IDY3LjEyIDE2LjUwUTY3LjU1IDE2LjgxIDY4LjU1IDE3LjEwUTY5LjU0IDE3LjQwIDcwLjE0IDE3Ljc4UTcwLjc1IDE4LjE2IDcxLjAzIDE4LjY1UTcxLjMxIDE5LjEzIDcxLjMxIDE5Ljc5TDcxLjMxIDE5Ljc5UTcxLjMxIDIwLjg2IDcwLjQ5IDIxLjQ5UTY5LjY4IDIyLjEyIDY4LjI4IDIyLjEyTDY4LjI4IDIyLjEyUTY3LjM1IDIyLjEyIDY2LjU3IDIxLjc3UTY1LjgwIDIxLjQzIDY1LjM3IDIwLjgzUTY0Ljk0IDIwLjIyIDY0Ljk0IDE5LjQyWiIgZmlsbD0iI0ZGRkZGRiIvPjxwYXRoIGNsYXNzPSJzdmdfX3RleHQiIGQ9Ik05Ny4yOSAxNy44MEw5Ny4yOSAxNy44MFE5Ny4yOSAxNi41NCA5Ny44OSAxNS41NFE5OC40OSAxNC41NSA5OS41NCAxMy45OVExMDAuNTkgMTMuNDMgMTAxLjkxIDEzLjQzTDEwMS45MSAxMy40M1ExMDMuMDYgMTMuNDMgMTAzLjk4IDEzLjg0UTEwNC45MSAxNC4yNSAxMDUuNTIgMTUuMDJMMTA1LjUyIDE1LjAyTDEwNC4wMSAxNi4zOVExMDMuMjAgMTUuNDAgMTAyLjAzIDE1LjQwTDEwMi4wMyAxNS40MFExMDEuMzQgMTUuNDAgMTAwLjgxIDE1LjcwUTEwMC4yOCAxNiA5OS45OCAxNi41NFE5OS42OSAxNy4wOSA5OS42OSAxNy44MEw5OS42OSAxNy44MFE5OS42OSAxOC41MSA5OS45OCAxOS4wNVExMDAuMjggMTkuNjAgMTAwLjgxIDE5LjkwUTEwMS4zNCAyMC4yMCAxMDIuMDMgMjAuMjBMMTAyLjAzIDIwLjIwUTEwMy4yMCAyMC4yMCAxMDQuMDEgMTkuMjJMMTA0LjAxIDE5LjIyTDEwNS41MiAyMC41OFExMDQuOTEgMjEuMzUgMTAzLjk5IDIxLjc2UTEwMy4wNiAyMi4xNyAxMDEuOTEgMjIuMTdMMTAxLjkxIDIyLjE3UTEwMC41OSAyMi4xNyA5OS41NCAyMS42MVE5OC40OSAyMS4wNSA5Ny44OSAyMC4wNVE5Ny4yOSAxOS4wNiA5Ny4yOSAxNy44MFpNMTA5LjYzIDE3LjgwTDEwOS42MyAxNy44MFExMDkuNjMgMTYuNTUgMTEwLjIzIDE1LjU1UTExMC44NCAxNC41NiAxMTEuOTAgMTQuMDBRMTEyLjk2IDEzLjQzIDExNC4yOSAxMy40M0wxMTQuMjkgMTMuNDNRMTE1LjYyIDEzLjQzIDExNi42OSAxNC4wMFExMTcuNzUgMTQuNTYgMTE4LjM2IDE1LjU1UTExOC45NiAxNi41NSAxMTguOTYgMTcuODBMMTE4Ljk2IDE3LjgwUTExOC45NiAxOS4wNSAxMTguMzYgMjAuMDRRMTE3Ljc1IDIxLjA0IDExNi42OSAyMS42MFExMTUuNjMgMjIuMTcgMTE0LjI5IDIyLjE3TDExNC4yOSAyMi4xN1ExMTIuOTYgMjIuMTcgMTExLjkwIDIxLjYwUTExMC44NCAyMS4wNCAxMTAuMjMgMjAuMDRRMTA5LjYzIDE5LjA1IDEwOS42MyAxNy44MFpNMTEyLjAzIDE3LjgwTDExMi4wMyAxNy44MFExMTIuMDMgMTguNTEgMTEyLjMzIDE5LjA1UTExMi42MyAxOS42MCAxMTMuMTUgMTkuOTBRMTEzLjY2IDIwLjIwIDExNC4yOSAyMC4yMEwxMTQuMjkgMjAuMjBRMTE0LjkzIDIwLjIwIDExNS40NSAxOS45MFExMTUuOTYgMTkuNjAgMTE2LjI2IDE5LjA1UTExNi41NiAxOC41MSAxMTYuNTYgMTcuODBMMTE2LjU2IDE3LjgwUTExNi41NiAxNy4wOSAxMTYuMjYgMTYuNTRRMTE1Ljk2IDE2IDExNS40NSAxNS43MFExMTQuOTMgMTUuNDAgMTE0LjI5IDE1LjQwTDExNC4yOSAxNS40MFExMTMuNjYgMTUuNDAgMTEzLjE0IDE1LjcwUTExMi42MyAxNiAxMTIuMzMgMTYuNTRRMTEyLjAzIDE3LjA5IDExMi4wMyAxNy44MFpNMTI2LjAyIDIyTDEyMy42OSAyMkwxMjMuNjkgMTMuNjBMMTI1LjY1IDEzLjYwTDEyOS4zNiAxOC4wN0wxMjkuMzYgMTMuNjBMMTMxLjY4IDEzLjYwTDEzMS42OCAyMkwxMjkuNzMgMjJMMTI2LjAyIDE3LjUyTDEyNi4wMiAyMlpNMTM2LjQyIDE3LjgwTDEzNi40MiAxNy44MFExMzYuNDIgMTYuNTQgMTM3LjAyIDE1LjU0UTEzNy42MSAxNC41NSAxMzguNjcgMTMuOTlRMTM5LjcyIDEzLjQzIDE0MS4wNCAxMy40M0wxNDEuMDQgMTMuNDNRMTQyLjE5IDEzLjQzIDE0My4xMSAxMy44NFExNDQuMDQgMTQuMjUgMTQ0LjY1IDE1LjAyTDE0NC42NSAxNS4wMkwxNDMuMTQgMTYuMzlRMTQyLjMzIDE1LjQwIDE0MS4xNiAxNS40MEwxNDEuMTYgMTUuNDBRMTQwLjQ3IDE1LjQwIDEzOS45NCAxNS43MFExMzkuNDEgMTYgMTM5LjExIDE2LjU0UTEzOC44MiAxNy4wOSAxMzguODIgMTcuODBMMTM4LjgyIDE3LjgwUTEzOC44MiAxOC41MSAxMzkuMTEgMTkuMDVRMTM5LjQxIDE5LjYwIDEzOS45NCAxOS45MFExNDAuNDcgMjAuMjAgMTQxLjE2IDIwLjIwTDE0MS4xNiAyMC4yMFExNDIuMzMgMjAuMjAgMTQzLjE0IDE5LjIyTDE0My4xNCAxOS4yMkwxNDQuNjUgMjAuNThRMTQ0LjA0IDIxLjM1IDE0My4xMiAyMS43NlExNDIuMTkgMjIuMTcgMTQxLjA0IDIyLjE3TDE0MS4wNCAyMi4xN1ExMzkuNzIgMjIuMTcgMTM4LjY3IDIxLjYxUTEzNy42MSAyMS4wNSAxMzcuMDIgMjAuMDVRMTM2LjQyIDE5LjA2IDEzNi40MiAxNy44MFpNMTU1LjU3IDIyTDE0OS4xOSAyMkwxNDkuMTkgMTMuNjBMMTUxLjU3IDEzLjYwTDE1MS41NyAyMC4xMUwxNTUuNTcgMjAuMTFMMTU1LjU3IDIyWk0xNTkuOTIgMTguMjZMMTU5LjkyIDE4LjI2TDE1OS45MiAxMy42MEwxNjIuMzAgMTMuNjBMMTYyLjMwIDE4LjE5UTE2Mi4zMCAyMC4yMCAxNjMuODkgMjAuMjBMMTYzLjg5IDIwLjIwUTE2NS40OCAyMC4yMCAxNjUuNDggMTguMTlMMTY1LjQ4IDE4LjE5TDE2NS40OCAxMy42MEwxNjcuODIgMTMuNjBMMTY3LjgyIDE4LjI2UTE2Ny44MiAyMC4xMyAxNjYuNzggMjEuMTVRMTY1Ljc0IDIyLjE3IDE2My44NyAyMi4xN0wxNjMuODcgMjIuMTdRMTYyLjAwIDIyLjE3IDE2MC45NiAyMS4xNVExNTkuOTIgMjAuMTMgMTU5LjkyIDE4LjI2Wk0xNzUuMjggMjJMMTcyLjkxIDIyTDE3Mi45MSAxMy42MEwxNzUuMjggMTMuNjBMMTc1LjI4IDIyWk0xODQuNDMgMjJMMTgwLjQ2IDIyTDE4MC40NiAxMy42MEwxODQuNDMgMTMuNjBRMTg1LjgxIDEzLjYwIDE4Ni44OCAxNC4xMlExODcuOTUgMTQuNjMgMTg4LjU0IDE1LjU4UTE4OS4xMiAxNi41MyAxODkuMTIgMTcuODBMMTg5LjEyIDE3LjgwUTE4OS4xMiAxOS4wNyAxODguNTQgMjAuMDJRMTg3Ljk1IDIwLjk3IDE4Ni44OCAyMS40OFExODUuODEgMjIgMTg0LjQzIDIyTDE4NC40MyAyMlpNMTgyLjg0IDE1LjUwTDE4Mi44NCAyMC4xMEwxODQuMzQgMjAuMTBRMTg1LjQyIDIwLjEwIDE4Ni4wNyAxOS40OVExODYuNzIgMTguODggMTg2LjcyIDE3LjgwTDE4Ni43MiAxNy44MFExODYuNzIgMTYuNzIgMTg2LjA3IDE2LjExUTE4NS40MiAxNS41MCAxODQuMzQgMTUuNTBMMTg0LjM0IDE1LjUwTDE4Mi44NCAxNS41MFpNMTkzLjQyIDE3LjgwTDE5My40MiAxNy44MFExOTMuNDIgMTYuNTUgMTk0LjAzIDE1LjU1UTE5NC42MyAxNC41NiAxOTUuNzAgMTQuMDBRMTk2Ljc2IDEzLjQzIDE5OC4wOSAxMy40M0wxOTguMDkgMTMuNDNRMTk5LjQyIDEzLjQzIDIwMC40OCAxNC4wMFEyMDEuNTUgMTQuNTYgMjAyLjE1IDE1LjU1UTIwMi43NiAxNi41NSAyMDIuNzYgMTcuODBMMjAyLjc2IDE3LjgwUTIwMi43NiAxOS4wNSAyMDIuMTUgMjAuMDRRMjAxLjU1IDIxLjA0IDIwMC40OSAyMS42MFExOTkuNDIgMjIuMTcgMTk4LjA5IDIyLjE3TDE5OC4wOSAyMi4xN1ExOTYuNzYgMjIuMTcgMTk1LjcwIDIxLjYwUTE5NC42MyAyMS4wNCAxOTQuMDMgMjAuMDRRMTkzLjQyIDE5LjA1IDE5My40MiAxNy44MFpNMTk1LjgyIDE3LjgwTDE5NS44MiAxNy44MFExOTUuODIgMTguNTEgMTk2LjEyIDE5LjA1UTE5Ni40MiAxOS42MCAxOTYuOTQgMTkuOTBRMTk3LjQ2IDIwLjIwIDE5OC4wOSAyMC4yMEwxOTguMDkgMjAuMjBRMTk4LjczIDIwLjIwIDE5OS4yNCAxOS45MFExOTkuNzYgMTkuNjAgMjAwLjA2IDE5LjA1UTIwMC4zNiAxOC41MSAyMDAuMzYgMTcuODBMMjAwLjM2IDE3LjgwUTIwMC4zNiAxNy4wOSAyMDAuMDYgMTYuNTRRMTk5Ljc2IDE2IDE5OS4yNCAxNS43MFExOTguNzMgMTUuNDAgMTk4LjA5IDE1LjQwTDE5OC4wOSAxNS40MFExOTcuNDUgMTUuNDAgMTk2Ljk0IDE1LjcwUTE5Ni40MiAxNiAxOTYuMTIgMTYuNTRRMTk1LjgyIDE3LjA5IDE5NS44MiAxNy44MFoiIGZpbGw9IiNGRkZGRkYiIHg9Ijk2LjUzIi8+PC9zdmc+)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/not-an-issue.svg)](https://forthebadge.com)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Descrição
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Este projeto foi feito para treinar minhas habilidades com consumo de api com php e laravel. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Linguagens, dependencias e libs utilizadas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- [Laravel](https://laravel.com/)
+- [guzzlehttp](https://packagist.org/packages/guzzlehttp/guzzle)
 
-### Premium Partners
+&#xa0;
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+## Api dos dados
+- [pokemon](https://pokeapi.co/)
 
-## Contributing
+<br>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Pré requisitos
 
-## Code of Conduct
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [php](https://www.php.net/), [laravel](https://laravel.com/docs/8.x).<br>
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) ou
+[Php Storm](https://www.jetbrains.com/phpstorm/).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+##  Rodando a aplicação 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Clone do projeto
+$ git clone https://github.com/pedro-henrique1/pokemon_cosume_api
+
+# Entra na pasta
+$ cd pokemon_cosume_api
+
+# Instalar as dependências
+$ composer install
+
+# iniciar o projeto
+$ php artisan serve
+
+# O servidor vai inicializar
+```
+
+
+
+
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Este projeto está sob licença do MIT. Para obter mais detalhes, consulte [LICENSE](LICENSE.md).
+
+Feito com :heart: de <a href="https://github.com/pedro-henrique1" target="_blank">Pedro</a>
+
+&#xa0;
+
+[![LinkedIn](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-henrique-silva-rodrigues-0544ab199/) [![instagram](https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pedro_henrique_dev/)
